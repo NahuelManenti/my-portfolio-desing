@@ -1,25 +1,31 @@
 import { useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import './Header.css';
+import SmoothLink from '../SmoothLink/SmoothLink';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isDarkMode, toggleTheme } = useTheme();
+
+  const handleNavClick = () => {
+    setIsMenuOpen(false);
+  };
+
 
   return (
     <header className="header">
       <div className="container">
         <div className="header-content">
           <div className="logo">
-            <a href="#">MiPortfolio</a>
+            <SmoothLink to="#home">MiPortfolio</SmoothLink>
           </div>
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
             <ul>
-              <li><a href="#home">Inicio</a></li>
-              <li><a href="#about">Sobre mí</a></li>
-              <li><a href="#skills">Habilidades</a></li>
-              <li><a href="#projects">Proyectos</a></li>
-              <li><a href="#contact">Contacto</a></li>
+              <li><SmoothLink to="#home" onClick={handleNavClick}>Inicio</SmoothLink></li>
+              <li><SmoothLink to="#about" onClick={handleNavClick}>Sobre mí</SmoothLink></li>
+              <li><SmoothLink to="#skills" onClick={handleNavClick}>Habilidades</SmoothLink></li>
+              <li><SmoothLink to="#projects" onClick={handleNavClick}>Proyectos</SmoothLink></li>
+              <li><SmoothLink to="#contact" onClick={handleNavClick}>Contacto</SmoothLink></li>
             </ul>
           </nav>
           <div className="header-actions">

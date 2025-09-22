@@ -51,7 +51,7 @@ const About = () => {
                 <span>Buenos Aires, Argentina</span>
               </div>
             </div>
-            <a href="#" className="btn">Descargar CV</a>
+            <a href="/NahuelManenti.CV_programador.pdf" className="btn">Descargar CV</a>
           </motion.div>
           <motion.div 
             className="about-image"

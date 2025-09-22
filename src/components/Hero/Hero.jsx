@@ -1,8 +1,21 @@
 import { motion } from 'framer-motion';
 import './Hero.css';
 import foto from '../../assets/mi-foto.jpeg';
+import { useSmoothScroll } from '../../hooks/useSmoothScroll';
 
 const Hero = () => {
+
+  const { scrollToSection } = useSmoothScroll();
+
+  const handleProjectsClick = (e) => {
+    e.preventDefault();
+    scrollToSection('projects');
+  };
+
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    scrollToSection('contact');
+  };
   return (
     <section id="home" className="hero">
       <div className="container">
@@ -17,8 +30,12 @@ const Hero = () => {
             <h2>Desarrollador Full Stack</h2>
             <p>Creo experiencias web increíbles con React y tecnologías modernas.</p>
             <div className="hero-buttons">
-              <a href="#projects" className="btn">Ver Proyectos</a>
-              <a href="#contact" className="btn btn-outline">Contactarme</a>
+              <button onClick={handleProjectsClick} className="btn">
+                Ver Proyectos
+              </button>
+              <button onClick={handleContactClick} className="btn btn-outline">
+                Contactarme
+              </button>
             </div>
           </motion.div>
           <motion.div 
