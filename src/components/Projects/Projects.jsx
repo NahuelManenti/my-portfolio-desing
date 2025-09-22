@@ -3,6 +3,7 @@ import './Projects.css';
 import miFoto1 from '../../assets/aesthethic.png';
 import miFoto2 from '../../assets/mindy-petshop.jpg';
 import miFoto3 from '../../assets/mytinerary.png';  
+import { link } from 'framer-motion/client';
 
 const Projects = () => {
   const projects = [
@@ -11,21 +12,27 @@ const Projects = () => {
       title: 'Aesthethic',
       description: 'Una aplicación de comercio electrónico completa con carrito de compras, pasarela de pago y panel de administración.',
       tags: ['React', 'Node.js', 'MongoDB', 'Materia ui'],
-      image: miFoto1
+      image: miFoto1,
+      linkproyect: 'https://aesthetics-manenti.netlify.app/',
+      linkgithub: 'https://github.com/NahuelManenti/Front-Aesthetics',
     },
     {
       id: 2,
       title: 'Mindy PetShop',
       description: 'E-commerce con carrito de compras.',
       tags: ['Html', 'Css', 'JavaScript', 'Boostrap'],
-      image: miFoto2
+      image: miFoto2,
+      linkproyect: 'https://mindy-petshop.vercel.app/',
+      linkgithub: 'https://github.com/NahuelManenti/Mindy-Petshop/tree/master/Mindy-Petshop',
     },
     {
       id: 3,
       title: 'MyTinerary',
       description: 'Página web que muestra lugares turísticos y sus recorridos junto con las opiniones de los usuarios',
       tags: ['React', 'Html', 'Css', 'Bootstrap', 'Heroku'],
-      image: miFoto3
+      image: miFoto3,
+      linkproyect: 'https://my-tinerary-manenti.netlify.app/',
+      linkgithub: 'https://github.com/NahuelManenti/mytinerary-manenti',
     },
     // {
     //   id: 4,
@@ -66,10 +73,10 @@ const Projects = () => {
                 </div>
                 <div className="project-overlay">
                   <div className="project-links">
-                    <a href="#" className="project-link">
+                    <a href={project.linkproyect} className="project-link">
                       <i className="fas fa-eye"></i>
                     </a>
-                    <a href="#" className="project-link">
+                    <a href={project.linkgithub} className="project-link">
                       <i className="fab fa-github"></i>
                     </a>
                   </div>
