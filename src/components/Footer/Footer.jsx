@@ -49,7 +49,7 @@ const Footer = () => {
           </motion.div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; {currentYear} MiPortfolio. Todos los derechos reservados.</p>
+          <p>&copy; {currentYear} Nahuel Manenti. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
